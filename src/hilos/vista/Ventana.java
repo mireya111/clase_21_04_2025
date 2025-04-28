@@ -15,7 +15,7 @@ public class Ventana extends JFrame {
 
     public Ventana() {
         setTitle("Autos");
-        setSize(500, 500);
+        setSize(500, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -23,31 +23,33 @@ public class Ventana extends JFrame {
         Automovil a = new Automovil();
 
         marcaAuto = new JTextField();
-        marcaAuto.setBounds(50, 20, 200, 30);
+        marcaAuto.setBounds(120, 20, 150, 30);
         add(marcaAuto);
 
         modeloAuto = new JTextField();
-        modeloAuto.setBounds(50, 30, 200, 30);
+        modeloAuto.setBounds(120, 60, 150, 30);
         add(modeloAuto);
 
         pricioAuto = new JTextField();
-        pricioAuto.setBounds(30, 40, 200, 30);
+        pricioAuto.setBounds(120, 100, 150, 30);
         add(pricioAuto);
 
+        // Creación del JButton
         btnProcesar = new JButton("Procesar");
-        btnProcesar.setBounds(160, 140, 80, 30);
+        btnProcesar.setBounds(100, 140, 100, 30);
         add(btnProcesar);
 
+        // Creación de los JLabels
         lblMarca = new JLabel("Marca: ");
-        lblMarca.setBounds(50, 1, 200, 30);
+        lblMarca.setBounds(50, 20, 60, 30);
         add(lblMarca);
 
-        lblModelo = new JLabel("Marca: ");
-        lblModelo.setBounds(50, 5, 200, 30);
+        lblModelo = new JLabel("Modelo: ");
+        lblModelo.setBounds(50, 60, 60, 30);
         add(lblModelo);
 
-        lblPrecio = new JLabel("Marca: ");
-        lblPrecio.setBounds(50, 10, 200, 30);
+        lblPrecio = new JLabel("Precio: ");
+        lblPrecio.setBounds(50, 100, 60, 30);
         add(lblPrecio);
 
         btnProcesar.addActionListener(e -> {
@@ -57,6 +59,7 @@ public class Ventana extends JFrame {
             a.setMarca(marca);
             a.setModelo(modelo);
             a.setPrecio(precio);
+            this.setVisible(false);
             JOptionPane.showMessageDialog(null,
                     "Sus datos son los siguientes:\n" +
                             "Marca: " + a.getMarca() + "\n" +
