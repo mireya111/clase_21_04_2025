@@ -65,7 +65,6 @@ public class Ventana extends JFrame {
                             "Marca: " + a.getMarca() + "\n" +
                             "Modelo: " + a.getModelo() + "\n" +
                             "Precio: " + a.getPrecio());
-
         });
 
     }
